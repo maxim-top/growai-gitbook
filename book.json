@@ -1,0 +1,142 @@
+{
+    "title": "蓝莺 IM - 专业SDK，私有云按月付费",
+    "description": "API文档及文章分享",
+    "author": "jinhai",
+    "output.name": "site",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "root": ".",
+    "styles": {
+        "website": "assets/styles/website.css"
+    },
+    "structure": {
+        "readme": "README.md"
+    },
+    "plugins": [
+        "github-buttons@2.1.0",
+        "edit-link@^2.0.2",
+        "fontsettings@^2.0.0",
+        "-sharing",
+        "sharing-plus@^0.0.2",
+        "-highlight",
+        "prism@^2.1.0",
+        "prism-themes@^0.0.2",
+        "-lunr",
+        "-search",
+        "search-plus@^0.0.11",
+        "advanced-emoji@^0.2.1",
+        "expandable-chapters-small@^0.1.7",
+        "tbfed-pagefooter@^0.0.1",
+        "terminal@^0.3.2",
+        "code@^0.1.0",
+        "splitter@^0.0.8",
+        "favicon@^0.0.2",
+        "github-tables@^0.0.2",
+        "image-captions@^3.1.0",
+        "canonical-link@^2.0.3",
+        "auto-scroll-table@^0.0.5",
+        "logo@^0.0.2",
+        "intopic-toc@^1.1.1",
+        "meta@^0.1.12"
+    ],
+
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": false
+        },
+        "prism": {
+            "css": [
+                "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+            ]
+        },
+        "github-buttons": {
+            "repo": "maxim-top/gitbook-template",
+            "types": [
+                "star"
+            ],
+            "size": "small"
+        },
+        "include-codeblock": {
+            "template": "ace",
+            "unindent": true,
+            "edit": true
+        },
+        "tbfed-pagefooter": {
+            "copyright": "© 2019-2023 美信拓扑 | <a href='https://lanyingim.com' style='text-decoration:none!important;'>官网</a>",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "edit-link": {
+            "base": "https://github.com/maxim-top/gitbook-template/blob/master",
+            "label": "在GitHub上编辑"
+        },
+        "favicon": {
+            "shortcut": "/assets/favicon.ico",
+            "bookmark": "/assets/favicon.ico"
+        },
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "flat"
+        },
+        "sharing": {
+           "douban": true,
+           "facebook": false,
+           "google": false,
+           "hatenaBookmark": false,
+           "instapaper": false,
+           "line": false,
+           "linkedin": false,
+           "messenger": false,
+           "pocket": false,
+           "qq": true,
+           "qzone": false,
+           "stumbleupon": false,
+           "twitter": false,
+           "viber": false,
+           "vk": false,
+           "weibo": true,
+           "whatsapp": false,
+           "all": [
+               "facebook", "google", "twitter",
+               "weibo", "instapaper", "linkedin",
+               "pocket", "stumbleupon", "qq", "qzone","douban","line","whatsapp"
+           ]
+       },
+       "logo":{
+	        "logo": "/assets/logo.png",
+            "logoStyle": "height: 35px;align: left;",
+            "url": "https://www.lanyingim.com"
+	    },
+        "intopic-toc": {
+            "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3",
+            "mode": "nested",
+            "maxDepth": 3,
+            "isCollapsed": false,
+            "isScrollspyActive": true,
+            "visible": true,
+            "label": "内容"
+        },
+        "language-picker": {
+            "grid-columns": 3
+        },
+        "canonical-link": {
+            "baseURL": "https://docs.lanyingim.com"
+        },
+        "image-captions": {
+            "caption": "_CAPTION_"
+        },
+        "meta": {
+            "data": [
+                {
+                    "name": "keywords",
+                    "content": "蓝莺IM, 美信拓扑, IM SDK, 即时通讯, 即时通讯云, IM云服务, 移动IM, 开源IM, 企业IM, 聊天软件, 移动客服, 在线客服, IM业务场景, APP社交, 开发者服务, 直播聊天室, 实时音视频, 音视频, 直播平台, 美信反垃圾, 内容安全"
+                }
+            ]
+        }
+    }
+}
