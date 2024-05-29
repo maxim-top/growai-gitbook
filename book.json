@@ -71,7 +71,7 @@
             "skipFirstH1": true
         },
         "edit-link": {
-            "base": "https://github.com/maxim-top/gitbook-template/blob/master",
+            "base": "https://github.com/ericliang/enterprise-im-book/blob/master",
             "label": "在GitHub上编辑"
         },
         "favicon": {
