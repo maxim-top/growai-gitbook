@@ -6,7 +6,7 @@ main(_Args) ->
     {ok, LinkHtml} = file:read_file("scripts/subdirectory_summary_link.html"),
     put(linklist_html, LinkListHtml),
     put(link_html, LinkHtml),
-    SummaryFiles = filelib:wildcard("*/SUMMARY.md"),
+    SummaryFiles = filelib:wildcard("SUMMARY.md") ++ filelib:wildcard("*/SUMMARY.md"),
     lists:foreach(fun (E) -> process_summary(E) end, SummaryFiles),
     ok.
 
@@ -77,7 +77,7 @@ gen_summary_html(Children, BaseDir, ParentLink) ->
 
 links_title(BaseDir) ->
     [Lang|_] = string:tokens(BaseDir, "/"),
-    maps:get(Lang, #{"zh-hans" => unicode:characters_to_binary("以下是本节中的文章："), "en" => <<"Here are the articles in this section:">>}).
+    maps:get(Lang, #{"." => unicode:characters_to_binary("以下是本节中的文章："), "zh-hans" => unicode:characters_to_binary("以下是本节中的文章："), "en" => <<"Here are the articles in this section:">>}).
 
 make_relative_link(ParentLink, Link) ->
     PUrl = markdown_to_html_url(ParentLink),
