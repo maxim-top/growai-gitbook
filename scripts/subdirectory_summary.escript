@@ -82,9 +82,33 @@ links_title(BaseDir) ->
 make_relative_link(ParentLink, Link) ->
     PUrl = markdown_to_html_url(ParentLink),
     Url = markdown_to_html_url(Link),
-    DirName = filename:dirname(PUrl),
-    DirName = string:left(Url, length(DirName)),
-    lists:sublist(Url, length(DirName)+2, length(Url)).
+    calculate_relative_path(PUrl, Url).
+
+calculate_relative_path(From, To) ->
+    FromAdjusted = ensure_trailing_slash(From),
+    ToAdjusted = ensure_trailing_slash(To),
+    FromList = string:tokens(FromAdjusted, "/"),
+    ToList = string:tokens(ToAdjusted, "/"),
+    {_, FromSuffix, ToSuffix} = find_common_path(FromList, ToList, [], []),
+    UpSteps = max(0, length(FromSuffix) - 1),
+    UpPath = lists:duplicate(UpSteps, ".."),
+    RelativePathList = UpPath ++ ToSuffix,
+    string:join(RelativePathList, "/").
+
+ensure_trailing_slash(Path) ->
+    case re:run(Path, "/$") of
+        {match, _} -> Path;
+        nomatch -> Path ++ "/"
+    end.
+
+find_common_path([], ToList, Acc, FromSuffix) ->
+    {lists:reverse(Acc), lists:reverse(FromSuffix), ToList};
+find_common_path(FromList, [], Acc, ToSuffix) ->
+    {lists:reverse(Acc), FromList, lists:reverse(ToSuffix)};
+find_common_path([H1|T1], [H2|T2], Acc, Suffix) when H1 == H2 ->
+    find_common_path(T1, T2, [H1|Acc], Suffix);
+find_common_path(FromList, ToList, Acc, Suffix) ->
+    {lists:reverse(Acc), FromList, lists:reverse(Suffix) ++ ToList}.
 
 markdown_to_html_file(File) ->
     Bin = iolist_to_binary(File),
