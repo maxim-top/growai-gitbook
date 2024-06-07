@@ -93,7 +93,13 @@ calculate_relative_path(From, To) ->
     UpSteps = max(0, length(FromSuffix) - 1),
     UpPath = lists:duplicate(UpSteps, ".."),
     RelativePathList = UpPath ++ ToSuffix,
-    string:join(RelativePathList, "/").
+    RelativePath = string:join(RelativePathList, "/"),
+    case lists:reverse(To) of
+        "/" ++ _ ->
+            RelativePath ++ "/";
+        _ ->
+            RelativePath
+    end.
 
 ensure_trailing_slash(Path) ->
     case re:run(Path, "/$") of
