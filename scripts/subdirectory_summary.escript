@@ -85,13 +85,21 @@ make_relative_link(ParentLink, Link) ->
     calculate_relative_path(PUrl, Url).
 
 calculate_relative_path(From, To) ->
-    FromList = string:tokens(From, "/"),
-    ToList = string:tokens(To, "/"),
+    FromAdjusted = ensure_trailing_slash(From),
+    ToAdjusted = ensure_trailing_slash(To),
+    FromList = string:tokens(FromAdjusted, "/"),
+    ToList = string:tokens(ToAdjusted, "/"),
     {_, FromSuffix, ToSuffix} = find_common_path(FromList, ToList, [], []),
-    UpSteps = length(FromSuffix) - 1,
+    UpSteps = max(0, length(FromSuffix) - 1),
     UpPath = lists:duplicate(UpSteps, ".."),
     RelativePathList = UpPath ++ ToSuffix,
     string:join(RelativePathList, "/").
+
+ensure_trailing_slash(Path) ->
+    case re:run(Path, "/$") of
+        {match, _} -> Path;
+        nomatch -> Path ++ "/"
+    end.
 
 find_common_path([], ToList, Acc, FromSuffix) ->
     {lists:reverse(Acc), lists:reverse(FromSuffix), ToList};
@@ -110,7 +118,8 @@ markdown_to_html_file(File) ->
 
 markdown_to_html_url(File) ->
     Bin = iolist_to_binary(File),
-    Bin2 = binary:replace(Bin, <<".md">>, <<".html">>),
+    Bin1 = binary:replace(Bin, <<"README.md">>, <<"">>),
+    Bin2 = binary:replace(Bin1, <<".md">>, <<".html">>),
     "_book/"++binary_to_list(Bin2).
 
 parse_line(Line) ->
