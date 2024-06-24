@@ -1,5 +1,2 @@
-# GrowAI Gitbook
-
-GrowAI Gitbook，是为蓝莺GrowAI创建的Gitbook模板，在基础的Gitbook工程中增加了蓝莺GrowAI支持。🚀🚀🚀 
-
-进一步了解[蓝莺GrowAI](README-GrowAI.md) 🤖🔍🐦
+# 企业级即时通讯系统：设计与实现
+Enterprise Level Instant Messaging: Design and Implementation

@@ -42,7 +42,6 @@
         "ga4@^1.0.1",
         "lanying-grow-ai@^1.0.5"
     ],
-
     "pluginsConfig": {
         "theme-default": {
             "showLevel": false
@@ -53,7 +52,7 @@
             ]
         },
         "github-buttons": {
-            "repo": "maxim-top/gitbook-template",
+            "repo": "ericliang/enterprise-im-book",
             "types": [
                 "star"
             ],
@@ -74,7 +73,7 @@
             "skipFirstH1": true
         },
         "edit-link": {
-            "base": "https://github.com/maxim-top/gitbook-template/blob/master",
+            "base": "https://github.com/ericliang/enterprise-im-book/blob/master",
             "label": "在GitHub上编辑"
         },
         "favicon": {
@@ -87,34 +86,44 @@
             "style": "flat"
         },
         "sharing": {
-           "douban": true,
-           "facebook": false,
-           "google": false,
-           "hatenaBookmark": false,
-           "instapaper": false,
-           "line": false,
-           "linkedin": false,
-           "messenger": false,
-           "pocket": false,
-           "qq": true,
-           "qzone": false,
-           "stumbleupon": false,
-           "twitter": false,
-           "viber": false,
-           "vk": false,
-           "weibo": true,
-           "whatsapp": false,
-           "all": [
-               "facebook", "google", "twitter",
-               "weibo", "instapaper", "linkedin",
-               "pocket", "stumbleupon", "qq", "qzone","douban","line","whatsapp"
-           ]
-       },
-       "logo":{
-	        "logo": "/assets/logo.png",
+            "douban": true,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": false,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "facebook",
+                "google",
+                "twitter",
+                "weibo",
+                "instapaper",
+                "linkedin",
+                "pocket",
+                "stumbleupon",
+                "qq",
+                "qzone",
+                "douban",
+                "line",
+                "whatsapp"
+            ]
+        },
+        "logo": {
+            "logo": "/assets/logo.png",
             "logoStyle": "height: 35px;align: left;",
-            "url": "https://www.lanyingim.com"
-	    },
+            "url": "/"
+        },
         "intopic-toc": {
             "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3",
             "mode": "nested",
@@ -128,7 +137,7 @@
             "grid-columns": 3
         },
         "canonical-link": {
-            "baseURL": "https://docs.lanyingim.com"
+            "baseURL": "https://zqrtty.site.chatai101.com"
         },
         "image-captions": {
             "caption": "_CAPTION_"
@@ -142,15 +151,15 @@
             ]
         },
         "3-ba": {
-            "token": "e78e9e5952ccb5b1b443e429da5f0b03"
+            "token": "7f3bc7fac7f179847959f81b488b1781"
         },
         "ga4": {
             "tag": "G-EE5J5LB4MD"
         },
         "lanying-grow-ai": {
-          "footer_note": "本文为知识分享和技术探讨之用，涉及到公司或产品（包括但不限于蓝莺IM）介绍内容仅为参考，具体产品和功能特性以官网开通为准。",
-          "lanying_link": "https://lanying.link/3qur4g",
-          "sitemap_hostname": "https://docs.lanyingim.com/"
+            "footer_note": "本文为知识分享和技术探讨之用，涉及到公司或产品（包括但不限于蓝莺IM）介绍内容仅为参考，具体产品和功能特性以官网开通为准。",
+            "lanying_link": "https://lanying.link/3qur4g",
+            "sitemap_hostname": "https://zqrtty.site.chatai101.com/"
         }
     }
 }
